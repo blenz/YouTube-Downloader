@@ -38,6 +38,10 @@
             this.txtYouTubeURL = new System.Windows.Forms.TextBox();
             this.comboBoxFileType = new System.Windows.Forms.ComboBox();
             this.btnDownload = new System.Windows.Forms.Button();
+            this.lblCurrentFileStatus = new System.Windows.Forms.Label();
+            this.lblFileDownloading = new System.Windows.Forms.Label();
+            this.lblProgressBar = new System.Windows.Forms.Label();
+            this.pgDownload = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,11 +125,49 @@
             this.btnDownload.Text = "Download";
             this.btnDownload.UseVisualStyleBackColor = true;
             // 
+            // lblCurrentFileStatus
+            // 
+            this.lblCurrentFileStatus.AutoSize = true;
+            this.lblCurrentFileStatus.Location = new System.Drawing.Point(25, 161);
+            this.lblCurrentFileStatus.Name = "lblCurrentFileStatus";
+            this.lblCurrentFileStatus.Size = new System.Drawing.Size(91, 13);
+            this.lblCurrentFileStatus.TabIndex = 9;
+            this.lblCurrentFileStatus.Text = "File Downloading:";
+            // 
+            // lblFileDownloading
+            // 
+            this.lblFileDownloading.AutoSize = true;
+            this.lblFileDownloading.Location = new System.Drawing.Point(122, 161);
+            this.lblFileDownloading.Name = "lblFileDownloading";
+            this.lblFileDownloading.Size = new System.Drawing.Size(35, 13);
+            this.lblFileDownloading.TabIndex = 10;
+            this.lblFileDownloading.Text = "label1";
+            // 
+            // lblProgressBar
+            // 
+            this.lblProgressBar.AutoSize = true;
+            this.lblProgressBar.Location = new System.Drawing.Point(25, 194);
+            this.lblProgressBar.Name = "lblProgressBar";
+            this.lblProgressBar.Size = new System.Drawing.Size(102, 13);
+            this.lblProgressBar.TabIndex = 11;
+            this.lblProgressBar.Text = "Download Progress:";
+            // 
+            // pgDownload
+            // 
+            this.pgDownload.Location = new System.Drawing.Point(133, 194);
+            this.pgDownload.Name = "pgDownload";
+            this.pgDownload.Size = new System.Drawing.Size(389, 13);
+            this.pgDownload.TabIndex = 12;
+            // 
             // YouTubeDLForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(674, 261);
+            this.Controls.Add(this.pgDownload);
+            this.Controls.Add(this.lblProgressBar);
+            this.Controls.Add(this.lblFileDownloading);
+            this.Controls.Add(this.lblCurrentFileStatus);
             this.Controls.Add(this.btnDownload);
             this.Controls.Add(this.comboBoxFileType);
             this.Controls.Add(this.txtYouTubeURL);
@@ -158,6 +200,10 @@
         private System.Windows.Forms.TextBox txtYouTubeURL;
         private System.Windows.Forms.ComboBox comboBoxFileType;
         private System.Windows.Forms.Button btnDownload;
+        private System.Windows.Forms.Label lblCurrentFileStatus;
+        private System.Windows.Forms.Label lblFileDownloading;
+        private System.Windows.Forms.Label lblProgressBar;
+        private System.Windows.Forms.ProgressBar pgDownload;
     }
 }
 

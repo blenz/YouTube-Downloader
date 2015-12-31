@@ -32,9 +32,12 @@
             this.picBox = new System.Windows.Forms.PictureBox();
             this.lblDownloadPath = new System.Windows.Forms.Label();
             this.txtDownloadPath = new System.Windows.Forms.TextBox();
-            this.btnDownload = new System.Windows.Forms.Button();
+            this.btnChoose = new System.Windows.Forms.Button();
             this.chkOpenAfterDownload = new System.Windows.Forms.CheckBox();
             this.lblYouTubeURL = new System.Windows.Forms.Label();
+            this.txtYouTubeURL = new System.Windows.Forms.TextBox();
+            this.comboBoxFileType = new System.Windows.Forms.ComboBox();
+            this.btnDownload = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,14 +69,14 @@
             this.txtDownloadPath.Size = new System.Drawing.Size(327, 20);
             this.txtDownloadPath.TabIndex = 2;
             // 
-            // btnDownload
+            // btnChoose
             // 
-            this.btnDownload.Location = new System.Drawing.Point(447, 89);
-            this.btnDownload.Name = "btnDownload";
-            this.btnDownload.Size = new System.Drawing.Size(75, 23);
-            this.btnDownload.TabIndex = 3;
-            this.btnDownload.Text = "Choose";
-            this.btnDownload.UseVisualStyleBackColor = true;
+            this.btnChoose.Location = new System.Drawing.Point(447, 89);
+            this.btnChoose.Name = "btnChoose";
+            this.btnChoose.Size = new System.Drawing.Size(75, 23);
+            this.btnChoose.TabIndex = 3;
+            this.btnChoose.Text = "Choose";
+            this.btnChoose.UseVisualStyleBackColor = true;
             // 
             // chkOpenAfterDownload
             // 
@@ -88,20 +91,47 @@
             // lblYouTubeURL
             // 
             this.lblYouTubeURL.AutoSize = true;
-            this.lblYouTubeURL.Location = new System.Drawing.Point(28, 131);
+            this.lblYouTubeURL.Location = new System.Drawing.Point(25, 131);
             this.lblYouTubeURL.Name = "lblYouTubeURL";
             this.lblYouTubeURL.Size = new System.Drawing.Size(79, 13);
             this.lblYouTubeURL.TabIndex = 5;
             this.lblYouTubeURL.Text = "YouTube URL:";
+            // 
+            // txtYouTubeURL
+            // 
+            this.txtYouTubeURL.Location = new System.Drawing.Point(114, 128);
+            this.txtYouTubeURL.Name = "txtYouTubeURL";
+            this.txtYouTubeURL.Size = new System.Drawing.Size(327, 20);
+            this.txtYouTubeURL.TabIndex = 6;
+            // 
+            // comboBoxFileType
+            // 
+            this.comboBoxFileType.FormattingEnabled = true;
+            this.comboBoxFileType.Location = new System.Drawing.Point(448, 127);
+            this.comboBoxFileType.Name = "comboBoxFileType";
+            this.comboBoxFileType.Size = new System.Drawing.Size(74, 21);
+            this.comboBoxFileType.TabIndex = 7;
+            // 
+            // btnDownload
+            // 
+            this.btnDownload.Location = new System.Drawing.Point(554, 126);
+            this.btnDownload.Name = "btnDownload";
+            this.btnDownload.Size = new System.Drawing.Size(75, 23);
+            this.btnDownload.TabIndex = 8;
+            this.btnDownload.Text = "Download";
+            this.btnDownload.UseVisualStyleBackColor = true;
             // 
             // YouTubeDLForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(674, 261);
+            this.Controls.Add(this.btnDownload);
+            this.Controls.Add(this.comboBoxFileType);
+            this.Controls.Add(this.txtYouTubeURL);
             this.Controls.Add(this.lblYouTubeURL);
             this.Controls.Add(this.chkOpenAfterDownload);
-            this.Controls.Add(this.btnDownload);
+            this.Controls.Add(this.btnChoose);
             this.Controls.Add(this.txtDownloadPath);
             this.Controls.Add(this.lblDownloadPath);
             this.Controls.Add(this.picBox);
@@ -122,9 +152,12 @@
         private System.Windows.Forms.PictureBox picBox;
         private System.Windows.Forms.Label lblDownloadPath;
         private System.Windows.Forms.TextBox txtDownloadPath;
-        private System.Windows.Forms.Button btnDownload;
+        private System.Windows.Forms.Button btnChoose;
         private System.Windows.Forms.CheckBox chkOpenAfterDownload;
         private System.Windows.Forms.Label lblYouTubeURL;
+        private System.Windows.Forms.TextBox txtYouTubeURL;
+        private System.Windows.Forms.ComboBox comboBoxFileType;
+        private System.Windows.Forms.Button btnDownload;
     }
 }
 

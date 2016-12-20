@@ -42,6 +42,7 @@
             this.lblFileDownloading = new System.Windows.Forms.Label();
             this.lblProgressBar = new System.Windows.Forms.Label();
             this.pgDownload = new System.Windows.Forms.ProgressBar();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +82,7 @@
             this.btnChoose.TabIndex = 3;
             this.btnChoose.Text = "Choose";
             this.btnChoose.UseVisualStyleBackColor = true;
+            this.btnChoose.Click += new System.EventHandler(this.btnChoose_Click);
             // 
             // chkOpenAfterDownload
             // 
@@ -111,6 +113,9 @@
             // comboBoxFileType
             // 
             this.comboBoxFileType.FormattingEnabled = true;
+            this.comboBoxFileType.Items.AddRange(new object[] {
+            "Video",
+            "MP3"});
             this.comboBoxFileType.Location = new System.Drawing.Point(459, 147);
             this.comboBoxFileType.Name = "comboBoxFileType";
             this.comboBoxFileType.Size = new System.Drawing.Size(74, 21);
@@ -124,6 +129,7 @@
             this.btnDownload.TabIndex = 8;
             this.btnDownload.Text = "Download";
             this.btnDownload.UseVisualStyleBackColor = true;
+            this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
             // 
             // lblCurrentFileStatus
             // 
@@ -156,7 +162,7 @@
             // 
             this.pgDownload.Location = new System.Drawing.Point(126, 215);
             this.pgDownload.Name = "pgDownload";
-            this.pgDownload.Size = new System.Drawing.Size(389, 13);
+            this.pgDownload.Size = new System.Drawing.Size(496, 13);
             this.pgDownload.TabIndex = 12;
             // 
             // YouTubeDLForm
@@ -204,6 +210,7 @@
         private System.Windows.Forms.Label lblFileDownloading;
         private System.Windows.Forms.Label lblProgressBar;
         private System.Windows.Forms.ProgressBar pgDownload;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }
 }
 

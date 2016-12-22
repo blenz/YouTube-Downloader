@@ -1,14 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using YoutubeExtractor;
 
 namespace YouTubeDownloader
 {
     public class YouTubeModel
     {
+        public YouTubeModel(string link, string folderpath)
+        {
+            Link = link;
+            FolderPath = folderpath;
+        }
+
         public IEnumerable<VideoInfo> VideoInfo { get; set; }
         public string FolderPath { get; set; }
         public string Link { get; set; }
@@ -18,11 +20,19 @@ namespace YouTubeDownloader
 
     public class YouTubeVideo : YouTubeModel
     {
-        public VideoDownloader VideoDownloader { get; set; }
+        public YouTubeVideo(string link, string folderpath) : base(link, folderpath)
+        {
+        }
+
+        public VideoDownloader VideoDownloaderType { get; set; }
     }
 
     public class YouTubeAudio : YouTubeModel
     {
-        public AudioDownloader AudioDownloader { get; set; }
+        public YouTubeAudio(string link, string folderpath) : base(link, folderpath)
+        {
+        }
+
+        public AudioDownloader AudioDownloaderType { get; set; }
     }
 }

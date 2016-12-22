@@ -26,13 +26,4 @@ namespace YouTubeDownloader
 
         public VideoDownloader VideoDownloaderType { get; set; }
     }
-
-    public class YouTubeAudio : YouTubeModel
-    {
-        public YouTubeAudio(string link, string folderpath) : base(link, folderpath)
-        {
-        }
-
-        public AudioDownloader AudioDownloaderType { get; set; }
-    }
 }

@@ -31,15 +31,7 @@ namespace YouTubeDownloader
         }
 
 
-        //Returns VideoInfo object (Only for audio model) 
-        public static VideoInfo GetVideoInfoAudioOnly(YouTubeAudio audioModel)
-        {
-            //We want the first extractable video with the highest audio quality. 
-            var video = audioModel.VideoInfo
-                .OrderByDescending(info => info.AudioBitrate)
-                .First();
-            return video;
-        }
+       
 
 
         //Returns filepath string (Shared by both models) 
@@ -65,21 +57,6 @@ namespace YouTubeDownloader
         public static VideoDownloader GetVideoDownloader(YouTubeVideo videoModel)
         {
             return new VideoDownloader(videoModel.Video, videoModel.FilePath);
-        }
-
-
-        //Returns AudioDownloader object (Only for audio model) 
-        public static AudioDownloader GetAudioDownloader(YouTubeAudio audioModel)
-        {
-            //Create AudioDownloader object 
-            return new AudioDownloader(audioModel.Video, audioModel.FilePath);
-        }
-
-
-        //Downloads Audio (Only for Audio model) 
-        public static void DownloadAudio(YouTubeAudio audioModel)
-        {
-            Task.Run(() => audioModel.AudioDownloaderType.Execute());
         }
 
         //Downloads Video (Only for video model) 

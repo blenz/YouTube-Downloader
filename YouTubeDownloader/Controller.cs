@@ -20,10 +20,10 @@ namespace YouTubeDownloader
             folderBrowserDialog1.SelectedPath = folder;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-        }
+        private void Form1_Load(object sender, EventArgs e){}
 
+
+        // Choose where to download
         private void btnChoose_Click(object sender, EventArgs e)
         {
             var result = folderBrowserDialog1.ShowDialog();
@@ -32,14 +32,16 @@ namespace YouTubeDownloader
                 txtDownloadPath.Text = folderBrowserDialog1.SelectedPath;
         }
 
+        // Download click
         private void btnDownload_Click(object sender, EventArgs e)
         {
+            // Check for valid input
             var validInput = ValidateInput();
   
             string link;
             string folderpath;
 
-            // If input is valid
+            // If input is valid else do nothing
             if (validInput.Item1)
             {
                 link = validInput.Item2;
@@ -54,26 +56,33 @@ namespace YouTubeDownloader
         }
 
         
-
+        // Download the video
         private void DownloadVideo(YouTubeVideo video)
         {
             try
             {
+                // Get video information
                 video.VideoInfo = FileDownloader.GetVideoInfos(video);
                 video.Video = FileDownloader.GetVideoInfo(video);
                 lblFileDownloading.Text = video.Video.Title;
                 video.FilePath = FileDownloader.GetPath(video) + video.Video.VideoExtension;
                 video.VideoDownloaderType = FileDownloader.GetVideoDownloader(video);
 
-                // Event handlers
+                // Open file location
                 video.VideoDownloaderType.DownloadFinished += (sender, args) => OpenFolder(video.FilePath);
+
+                // Download bar
                 video.VideoDownloaderType.DownloadProgressChanged +=
                     (sender, args) => pgDownload.Value = (int) args.ProgressPercentage;
                 video.VideoDownloaderType.DownloadProgressChanged +=
                     (sender, args) => lblPercent.Text = ((int) args.ProgressPercentage).ToString() + "%";
+
+                // Allow user to use the UI after download is finished
                 video.VideoDownloaderType.DownloadFinished += (sender, args) => EnableUI();
+
                 CheckForIllegalCrossThreadCalls = false;
 
+                // Download
                 FileDownloader.DownloadVideo(video);
             }
             catch (Exception)
@@ -82,6 +91,10 @@ namespace YouTubeDownloader
                 lblValidation.Text = "Error Downloading Video";
             }
         }
+        
+        
+
+        // HELPERS
 
         private void OpenFolder(string filePath)
         {
@@ -98,7 +111,6 @@ namespace YouTubeDownloader
             btnChoose.Enabled = false;
             txtDownloadPath.Enabled = false;
             txtYouTubeURL.Enabled = false;
-            
         }
 
         private void EnableUI()
@@ -106,8 +118,7 @@ namespace YouTubeDownloader
             btnDownload.Enabled = true;
             btnChoose.Enabled = true;
             txtDownloadPath.Enabled = true;
-            txtYouTubeURL.Enabled = true;
-            
+            txtYouTubeURL.Enabled = true; 
         }
 
         private Tuple<bool, string> ValidateInput()
